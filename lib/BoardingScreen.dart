@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:internship_task1/Register.dart';
 import 'package:internship_task1/SignIn.dart';
 
 class BoardingScreen extends StatelessWidget {
@@ -180,8 +181,12 @@ class BoardingScreen extends StatelessWidget {
                       'Don\'t have an account?',
                     ),
                     TextButton(
-                        onPressed: (){ },
-
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const Register()),
+                          );
+                        },
                         child: const Text(
                           'Sign Up',
                           style: TextStyle(

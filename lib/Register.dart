@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:internship_task1/Register.dart';
-class SignIn extends StatelessWidget {
-  const SignIn({Key? key}) : super(key: key);
+import 'package:internship_task1/SignIn.dart';
+
+class Register extends StatelessWidget {
+  const Register({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: null,
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset('assets/images/image.jpg'),
+            Image.asset('assets/images/imagev2.jpg'),
             const SizedBox(
               height: 30,
             ),
@@ -20,7 +22,7 @@ class SignIn extends StatelessWidget {
               child: Container(
                 alignment: Alignment.topLeft,
                 child: const Text(
-                    'Welcome to Fashion Daily',
+                  'Welcome to Fashion Daily',
                   style: TextStyle(
                     color: Colors.black45,
                   ),
@@ -36,7 +38,7 @@ class SignIn extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.only(left: 20),
                   child: Text(
-                      'Sign in',
+                    'Register',
                     style: TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
@@ -56,7 +58,7 @@ class SignIn extends StatelessWidget {
                         width: 5,
                       ),
                       Icon(Icons.help,
-                      color: Colors.blue,),
+                        color: Colors.blue,),
 
 
                     ],
@@ -66,6 +68,41 @@ class SignIn extends StatelessWidget {
             ),
             const SizedBox(
               height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Container(
+                alignment: Alignment.topLeft,
+                child: const Text(
+                  'Email',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              height: 45,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20,right: 20),
+                child: TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: const InputDecoration(
+                    labelText: "Eg. example@email.com",
+                    border: OutlineInputBorder(
+
+                    ),
+
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20),
@@ -91,9 +128,42 @@ class SignIn extends StatelessWidget {
                   keyboardType: TextInputType.phone,
                   decoration: const InputDecoration(
                     labelText: "Eg. 812345678",
-                    prefixIcon: Icon(
-                        Icons.email
+
+                    border: OutlineInputBorder(
+
                     ),
+
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Container(
+                alignment: Alignment.topLeft,
+                child: const Text(
+                  'Password',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              height: 45,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20,right: 20),
+                child: TextFormField(
+                  keyboardType: TextInputType.visiblePassword,
+                  decoration: const InputDecoration(
+                    labelText: "Password",
                     border: OutlineInputBorder(
 
                     ),
@@ -131,7 +201,7 @@ class SignIn extends StatelessWidget {
             const Text(
               'Or',
               style: TextStyle(
-                color: Colors.black45
+                  color: Colors.black45
               ) ,
             ),
             const SizedBox(
@@ -155,27 +225,37 @@ class SignIn extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Don\'t have an account?',
+                  'Has any account?',
                 ),
                 TextButton(
                     onPressed: (){
+
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Register()),
+                        MaterialPageRoute(builder: (context) => const SignIn()),
                       );
                     },
                     child: Text(
-                      'Register here',
+                      'Sign in here',
                     ) )
               ],
             ),
             const SizedBox(
               height: 10,
             ),
-            const Text('Use the application according to policy rules. Any\n kinds of violations will be subject to sanctions',
-            style: TextStyle(
-              color: Colors.black45
-            ),)
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'By regestering your account, you are agree to our',
+                ),
+                TextButton(
+                    onPressed: (){},
+                    child: Text(
+                      'terms and conditions',
+                    ) )
+              ],
+            ),
 
 
 

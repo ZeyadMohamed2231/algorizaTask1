@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:internship_task1/BoardingScreen.dart';
+import 'package:internship_task1/Register.dart';
 import 'package:internship_task1/SignIn.dart';
 
 void main() {
