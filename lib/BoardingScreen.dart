@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:internship_task1/SignIn.dart';
 
 class BoardingScreen extends StatelessWidget {
   const BoardingScreen({Key? key}) : super(key: key);
@@ -23,7 +24,10 @@ class BoardingScreen extends StatelessWidget {
 
             ),
             onPressed: () {
-            print('Skip clicked');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SignIn()),
+              );
           },
             child: const Text(
             'Skip',
@@ -35,8 +39,6 @@ class BoardingScreen extends StatelessWidget {
         ),
       ]
     ),
-
-
       body: PageView(
         children: [
           Center(
@@ -85,7 +87,12 @@ class BoardingScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    onPressed: (){ },
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SignIn()),
+                      );
+                    },
                     child: Text(
                       'Get Started',
                       style: TextStyle(
@@ -148,7 +155,6 @@ class BoardingScreen extends StatelessWidget {
                 ),
                 Container(
                   width: 300,
-
                   height: 40.0,
                   child: ElevatedButton(
                     style: ButtonStyle(
