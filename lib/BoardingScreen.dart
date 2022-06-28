@@ -108,7 +108,12 @@ class BoardingScreen extends StatelessWidget {
                       'Don\'t have an account?',
                     ),
                     TextButton(
-                        onPressed: (){ },
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const Register()),
+                          );
+                        },
 
                         child: const Text(
                           'Sign Up',

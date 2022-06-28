@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:internship_task1/SignIn.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 
 class Register extends StatelessWidget {
   const Register({Key? key}) : super(key: key);
@@ -120,22 +121,28 @@ class Register extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            SizedBox(
-              height: 45,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20,right: 20),
-                child: TextFormField(
-                  keyboardType: TextInputType.phone,
-                  decoration: const InputDecoration(
-                    labelText: "Eg. 812345678",
+            Row(
+              children: [
+                SizedBox(
+                    width: 100,
+                    child: CountryCodePicker(initialSelection: 'EG',)),
+                SizedBox(
+                  width: 270,
+                  height: 45,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 0,right: 0),
+                    child: TextFormField(
+                      keyboardType: TextInputType.phone,
+                      decoration: const InputDecoration(
+                        labelText: "Eg. 812345678",
+                        border: OutlineInputBorder(
+                        ),
 
-                    border: OutlineInputBorder(
-
+                      ),
                     ),
-
                   ),
                 ),
-              ),
+              ],
             ),
             const SizedBox(
               height: 10,
@@ -161,9 +168,13 @@ class Register extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(left: 20,right: 20),
                 child: TextFormField(
+                  obscureText: true,
                   keyboardType: TextInputType.visiblePassword,
                   decoration: const InputDecoration(
                     labelText: "Password",
+                    suffixIcon: Icon(
+                        Icons.remove_red_eye
+                    ),
                     border: OutlineInputBorder(
 
                     ),

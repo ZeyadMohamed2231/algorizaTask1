@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:internship_task1/Register.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 class SignIn extends StatelessWidget {
   const SignIn({Key? key}) : super(key: key);
 
@@ -83,24 +84,28 @@ class SignIn extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            SizedBox(
-              height: 45,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20,right: 20),
-                child: TextFormField(
-                  keyboardType: TextInputType.phone,
-                  decoration: const InputDecoration(
-                    labelText: "Eg. 812345678",
-                    prefixIcon: Icon(
-                        Icons.email
-                    ),
-                    border: OutlineInputBorder(
+            Row(
+              children: [
+                SizedBox(
+                  width: 100,
+                    child: CountryCodePicker(initialSelection: 'EG',)),
+                SizedBox(
+                  width: 270,
+                  height: 45,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 0,right: 0),
+                    child: TextFormField(
+                      keyboardType: TextInputType.phone,
+                      decoration: const InputDecoration(
+                        labelText: "Eg. 812345678",
+                        border: OutlineInputBorder(
+                        ),
 
+                      ),
                     ),
-
                   ),
                 ),
-              ),
+              ],
             ),
             const SizedBox(
               height: 10,
@@ -154,6 +159,7 @@ class SignIn extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+
                 Text(
                   'Don\'t have an account?',
                 ),
