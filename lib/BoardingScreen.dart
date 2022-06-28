@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:internship_task1/Register.dart';
 import 'package:internship_task1/SignIn.dart';
+import 'package:internship_task1/my_button.dart';
 
 class BoardingScreen extends StatelessWidget {
   const BoardingScreen({Key? key}) : super(key: key);
@@ -11,32 +12,21 @@ class BoardingScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        actions: [
+        actions:  [
         Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: ElevatedButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Color(0xD0E1D5AD)),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(18.0),
-                ),
+          padding: EdgeInsets.all(8.0),
+          child:
+            MyButton(text: 'Skip',
+              textColor: Colors.black,
+              borderRadius: 18.0,
+              backGroundColor: Color(0xD0E1D5AD),
+              onPress: () {Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const SignIn()),
+              );},
+              width: 70,
+              height: 90,
               ),
 
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SignIn()),
-              );
-          },
-            child: const Text(
-            'Skip',
-            style: TextStyle(
-                color: Colors.black
-            ),
-          ),
-          ),
         ),
       ]
     ),
@@ -75,32 +65,12 @@ class BoardingScreen extends StatelessWidget {
                 SizedBox(
                   height: 10.0,
                 ),
-                Container(
-                  width: 300,
-
-                  height: 40.0,
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.teal),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                      ),
-                    ),
-                    onPressed: (){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const SignIn()),
-                      );
-                    },
-                    child: Text(
-                      'Get Started',
-                      style: TextStyle(
-                          color: Colors.white
-                      ),
-                    ),),
-                ),
+                MyButton(text: 'Get Started',
+                  onPress: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SignIn()));
+              }, width: 300.0, height: 40.0,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -159,26 +129,12 @@ class BoardingScreen extends StatelessWidget {
                 SizedBox(
                   height: 10.0,
                 ),
-                Container(
-                  width: 300,
-                  height: 40.0,
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.teal),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                      ),
-                    ),
-                    onPressed: (){ },
-                    child: Text(
-                      'Get Started',
-                      style: TextStyle(
-                          color: Colors.white
-                      ),
-                    ),),
-                ),
+                MyButton(text: 'Get Started',
+                    onPress: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const SignIn()));
+                    }, width: 300.0, height: 40.0,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

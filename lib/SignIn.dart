@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:internship_task1/Register.dart';
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:internship_task1/my_button.dart';
 class SignIn extends StatelessWidget {
   const SignIn({Key? key}) : super(key: key);
 
@@ -110,26 +111,11 @@ class SignIn extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            SizedBox(
-              width: 350,
-              height: 40.0,
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.blue),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                  ),
-                ),
-                onPressed: (){ },
-                child: Text(
-                  'Sign In ',
-                  style: TextStyle(
-                      color: Colors.white
-                  ),
-                ),),
-            ),
+            MyButton(text: 'Sign In',
+                backGroundColor: Colors.blue,
+                height: 40.0,
+                width: 350.0,
+                onPress: (){}),
             const SizedBox(
               height: 10,
             ),
@@ -182,7 +168,6 @@ class SignIn extends StatelessWidget {
             style: TextStyle(
               color: Colors.black45
             ),)
-
 
 
 
