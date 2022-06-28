@@ -3,6 +3,8 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:internship_task1/Register.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:internship_task1/my_button.dart';
+
+import 'my_form.dart';
 class SignIn extends StatelessWidget {
   const SignIn({Key? key}) : super(key: key);
 
@@ -95,15 +97,7 @@ class SignIn extends StatelessWidget {
                   height: 45,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 0,right: 0),
-                    child: TextFormField(
-                      keyboardType: TextInputType.phone,
-                      decoration: const InputDecoration(
-                        labelText: "Eg. 812345678",
-                        border: OutlineInputBorder(
-                        ),
-
-                      ),
-                    ),
+                    child: MyForm(labelText: 'Eg. 812345678', textInputType: TextInputType.phone, icon: Icon(null),)
                   ),
                 ),
               ],

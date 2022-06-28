@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:internship_task1/SignIn.dart';
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:internship_task1/my_form.dart';
 
 import 'my_button.dart';
 
@@ -92,16 +93,7 @@ class Register extends StatelessWidget {
               height: 45,
               child: Padding(
                 padding: const EdgeInsets.only(left: 20,right: 20),
-                child: TextFormField(
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
-                    labelText: "Eg. example@email.com",
-                    border: OutlineInputBorder(
-
-                    ),
-
-                  ),
-                ),
+                child: MyForm(labelText: 'Eg. example@gmail.com', textInputType: TextInputType.emailAddress,icon: Icon(null),)
               ),
             ),
             const SizedBox(
@@ -133,15 +125,7 @@ class Register extends StatelessWidget {
                   height: 45,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 0,right: 0),
-                    child: TextFormField(
-                      keyboardType: TextInputType.phone,
-                      decoration: const InputDecoration(
-                        labelText: "Eg. 812345678",
-                        border: OutlineInputBorder(
-                        ),
-
-                      ),
-                    ),
+                    child:MyForm(labelText: 'Eg. 812345678', textInputType: TextInputType.phone, icon: Icon(null),)
                   ),
                 ),
               ],
@@ -169,20 +153,9 @@ class Register extends StatelessWidget {
               height: 45,
               child: Padding(
                 padding: const EdgeInsets.only(left: 20,right: 20),
-                child: TextFormField(
-                  obscureText: true,
-                  keyboardType: TextInputType.visiblePassword,
-                  decoration: const InputDecoration(
-                    labelText: "Password",
-                    suffixIcon: Icon(
-                        Icons.remove_red_eye
-                    ),
-                    border: OutlineInputBorder(
+                child:
+                MyForm(icon: Icon(Icons.remove_red_eye), labelText: 'Password', textInputType: TextInputType.visiblePassword,visible: true,)
 
-                    ),
-
-                  ),
-                ),
               ),
             ),
             const SizedBox(
