@@ -115,20 +115,22 @@ class Register extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Row(
-              children: [
-                SizedBox(
-                    width: 100,
-                    child: CountryCodePicker(initialSelection: 'EG',)),
-                SizedBox(
-                  width: 270,
-                  height: 45,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 0,right: 0),
-                    child:MyForm(labelText: 'Eg. 812345678', textInputType: TextInputType.phone, icon: Icon(null),)
+            SizedBox(
+              width: double.infinity,
+              height: 45,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20,right: 20),
+                child:TextFormField(
+                  obscureText: false,
+                  keyboardType: TextInputType.phone,
+                  decoration: InputDecoration(
+                    labelText: 'Eg. 812345678',
+                    prefixIcon: CountryCodePicker(initialSelection: 'EG',showFlag: false,),
+                    border: const OutlineInputBorder(
+                    ),
                   ),
                 ),
-              ],
+              ),
             ),
             const SizedBox(
               height: 10,
