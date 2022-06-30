@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:internship_task1/Register.dart';
 import 'package:internship_task1/SignIn.dart';
@@ -36,7 +37,7 @@ class BoardingScreen extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset('assets/images/logo.JPG'),
-                Image.asset('assets/images/photov2.png'),
+                Expanded(child: Image.asset('assets/images/photov2.png')),
                 const SizedBox(
                   height: 20,
                 ),
@@ -64,6 +65,18 @@ class BoardingScreen extends StatelessWidget {
                 ),
                 SizedBox(
                   height: 10.0,
+                ),
+                DotsIndicator(
+                  dotsCount: 3,
+                  position: 0,
+                  decorator: DotsDecorator(
+                    size: const Size.square(9.0),
+                    activeSize: const Size(18.0, 9.0),
+                    activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+                  ),
+                ),
+                SizedBox(
+                  height: 5.0,
                 ),
                 MyButton(text: 'Get Started',
                   onPress: (){
@@ -100,7 +113,7 @@ class BoardingScreen extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset('assets/images/logo.JPG'),
-                Image.asset('assets/images/photo.png'),
+                Expanded(child: Image.asset('assets/images/photo.png')),
                 const SizedBox(
                   height: 20,
                 ),
@@ -128,6 +141,21 @@ class BoardingScreen extends StatelessWidget {
                 ),
                 SizedBox(
                   height: 10.0,
+                ),
+
+
+            DotsIndicator(
+              dotsCount: 3,
+              position: 1,
+              decorator: DotsDecorator(
+                size: const Size.square(9.0),
+                activeSize: const Size(18.0, 9.0),
+                activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+              ),
+            ),
+
+                SizedBox(
+                  height: 5.0,
                 ),
                 MyButton(text: 'Get Started',
                     onPress: (){
